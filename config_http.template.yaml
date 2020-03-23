@@ -1,0 +1,3 @@
+version: 2
+main:
+  www_path: /path/to/folder
