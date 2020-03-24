@@ -66,11 +66,6 @@ func HomeRouterHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var urlString string
-	for k, v := range r.Form {
-		urlString = urlString + fmt.Sprintf("%s=%s&", k, strings.Join(v, ""))
-	}
-
 	var headersData []string
 	for name, headers := range r.Header {
 		name = strings.ToLower(name)
@@ -88,7 +83,6 @@ func HomeRouterHandler(w http.ResponseWriter, r *http.Request) {
 	body, _ := ioutil.ReadAll(r.Body)
 
 	response := Response{Url: path,
-		Request: urlString,
 		Method:  r.Method,
 		Headers: headersData,
 		Form:    form,

@@ -1,5 +1,6 @@
 <?php
-include_once "SocketServer.php";
+include_once "src/socket/SocketServer.php";
+include_once "src/Response.php";
 
 class TestResponse
 {
